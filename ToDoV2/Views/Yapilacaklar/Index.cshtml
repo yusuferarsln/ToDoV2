@@ -55,7 +55,9 @@
                 @Html.DisplayFor(modelItem => item.IsDetayi)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ekrangoruntusu)
+                <img src="@Url.Content("~/Image/")@item.ekrangoruntusu "
+                     width="70"
+                     height="70" />
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.EklenmeTarihi)

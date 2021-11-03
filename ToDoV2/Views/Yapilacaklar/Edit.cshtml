@@ -31,13 +31,14 @@
         </div>
     </div>
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.ekrangoruntusu, new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(model => model.ekrangoruntusu, new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.ekrangoruntusu, "", new { @class = "text-danger" })
-        </div>
-    </div>
+    @using (Html.BeginForm("ResimEkle", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <p>
+            Ekran Görüntüsü Ekle
+        </p>
+        <input type="file" name="ekrangoruntusu" />
+        <input type="submit" value="Kaydet" />
+    }
 
     <div class="form-group">
         @Html.LabelFor(model => model.IsDone, new { @class = "control-label col-md-2" })

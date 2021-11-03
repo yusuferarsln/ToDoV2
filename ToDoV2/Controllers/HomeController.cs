@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -22,7 +23,17 @@ namespace ToDoV2.Controllers
         {
 
 
-
+            if (Request.Files.Count>0)
+            {
+                string dosyaadi = Path.GetFileName(Request.Files[0].FileName);
+                string uzanti = Path.GetExtension(Request.Files[0].FileName);
+                string yol = "E:/DemoApp/ToDoV2/ToDoV2/Image/" + dosyaadi + uzanti;
+                Request.Files[0].SaveAs(yol);
+                p.ekrangoruntusu = "/Image/" + dosyaadi + uzanti;
+                
+            }
+            context.Yapilacaklars.Add(p);
+            context.SaveChanges();
 
 
             return View();

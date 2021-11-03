@@ -1,0 +1,72 @@
+﻿@model ToDoV2.Models.Yapilacaklar
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+
+<h1>@Model.Yapilacak</h1>
+<hr />
+
+<p>
+    <span class="glyphicon glyphicon-time"></span>
+    Eklendiği Tarih :
+    @Model.EklenmeTarihi
+</p>
+<hr />
+<img class="img-responsive" src="https://place-hold.it/900x300/black/white" alt="" />
+<hr />
+<blockquote>
+    <p>
+        @Model.IsDetayi
+    </p>
+</blockquote>
+<div class="comment">
+    <div class="well">
+        <h4>YORUM YAP : </h4>
+        <form role="form">
+            <div class="form-group">
+                <textarea class="form-control" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+        </form>
+    </div>
+</div>
+
+<div class="media">
+    <img class="mr-3" src="https://place-hold.it/64x64/black/white&text=PP" alt="">
+    <div class="media-body">
+        <h5 class="mt-0">Media heading</h5>
+        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+    </div>
+</div>
+<hr />
+<div class="media">
+    <img class="mr-3" src="https://place-hold.it/64x64/black/white&text=PP" alt="">
+    <div class="media-body">
+        <h5 class="mt-0">Media heading</h5>
+        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+    </div>
+</div>
+<hr />
+<div class="media">
+    <img class="mr-3" src="https://place-hold.it/64x64/black/white&text=PP" alt="">
+    <div class="media-body">
+        <h5 class="mt-0">Media heading</h5>
+        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
+    </div>
+</div>
+<hr />
+
+@section SagKolon{
+
+    @{Html.RenderAction("KategoriListesi", "Kategori");}
+}
+
+
+
+
+
+
+

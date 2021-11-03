@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ToDoV2.Models.yapilacakmodel>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+@foreach (var item in Model)
+{
+
+    <div class="yapilacakitem">
+        <h3 class="page-header">
+            @item.Yapilacak
+        </h3>
+        <p>
+            <span class="glyphicon glyphicon-time">
+                @item.EklenmeTarihi
+            </span>
+        </p>
+        <hr />
+        <p>
+            @if (item.IsDone == true)
+            {
+                <label class="label label-success">Yapıldı</label>
+            }
+
+
+        </p>
+        <img class="img-responsive" src="https://place-hold.it/900x300/black/white" alt="" />
+        <hr />
+
+        @Html.ActionLink("Daha Fazla...", "Details", "Yapilacaklar", new { id = @item.Id }, new { @class = "btn btn-primary" })
+    </div>
+
+
+
+}
+
+@section SagKolon{
+
+    @{Html.RenderAction("KategoriListesi", "Kategori");}
+}
+
+
+
